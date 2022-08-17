@@ -22,22 +22,22 @@ mint.com is a simple system which keeps track of users financial transactions an
 
 
 ## Back of envelop 
-Total number of users : 10 million 
+Total number of users : ```10 million ```
 
-Max traffic load : 5*10 million = 50 million devices.
+Max traffic load : ``` 5*10 million``` = ```50 million ```devices.
 
-1 user does on an avg 10 transaction everyday = 10 * 5 million = 50 million/day.
+```1 user``` does on an avg ```10 transaction``` everyday = ```10 * 5 million``` = ```50 million/day```.
 
-total number of transaction per month = 50 million * 30 = 1500 million = 1.5 billion
+total number of transaction per month = ```50 million * 30``` = 1500 million = ```1.5 billion```
 
 Now, 
-Transaction per second = 50 million/ 860400 = 60 QPS
+Transaction per second = 50 million/ 860400 = ```60 QPS```
 
 And these read/writes are needed to be done, or done on polling on banking side.
 
-1 transcation = 50 bytes of data.
+```1 transcation = 50 bytes of data.```
 
-Amount of data per month = 50 bytes * 1.5 billion = 75 billion bytes = 75 GB of data
+Amount of data per month = ```50 bytes * 1.5 billion``` = 75 billion bytes = ```75 GB ```of data
 
 
 ### Latency 
@@ -60,9 +60,10 @@ Now this is a Write heavy system, as we have more number of transaction data get
 2. Transaction should be visible to the user 
 3. Budget set should be available to user 
 
-Tables 
+#### Tables 
 
 User Table 
+
     - uid          ( number )   (pk)
     - u_name       ( varchar2 )
     - u_email      ( varchar2 )
@@ -70,6 +71,7 @@ User Table
     - u_profile_uri( varchar2 )
 
 Budget Table
+
     - b_id          (number)    (pk)
     - uid           (number)    (fk)
     - b_name        (varchar)
@@ -78,6 +80,7 @@ Budget Table
     - b_month       (timestamp)
 
 Transaction Table
+
     - t_id          (number) (pk)
     - uid           (number) (fk)
     - t_time        (timestamp)
@@ -99,7 +102,9 @@ users_budget table
 ### APIS
 
 1. get_user_data API
+
     To get all the user related data 
+    ```
     GET /v1/get_user_data
     request
     {
@@ -117,26 +122,37 @@ users_budget table
             u_profile_uri
         }
     }
+    ```
 
 2. get_transaction
+
     To get the transaction, all or single 
-    GET /v1/get_transaction/t_id
+
+    ```GET /v1/get_transaction/t_id```
 
 3. get_budget
+
     To get the budget, all or single
-    GET /v1/get_budget/b_id
+
+    ```GET /v1/get_budget/b_id```
 
 4. set_budget
+
     To set a budget
-    SET /v1/set_budget
+
+    ```SET /v1/set_budget```
 
 4. add_transaction
+
     To add a transacation manually
-    SET /v1/set_transaction 
+
+    ```SET /v1/set_transaction ```
 
 5. delete_budget
+
     To delete a budget
-    DELETE /v1/delete_budget_b_id
+
+    ```DELETE /v1/delete_budget_b_id```
 
 etc...
 
