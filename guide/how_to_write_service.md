@@ -3,7 +3,9 @@
 # Component diagram
 ![Untitled Diagram (1)](https://user-images.githubusercontent.com/25270515/185761467-e719a1f2-4497-4c07-a088-5d76b428292f.jpg)
 
-It is recommended to make the diagram in the sequence of how components are listed, in an interview or build up. 
+So, this is an overview of all the major components which makes a normal service. 
+In an interview, one is not expected to make all the components. But better ask the interviewer which part he/she expects to dive deep.
+
 
 # components
 1. Client - Server
@@ -28,3 +30,9 @@ It is recommended to make the diagram in the sequence of how components are list
 20. error-automation
 21. UI-dashboard
 22. All components connected. 
+
+## Major categories of components
+1. Networking & service discovery 
+2. Application code
+3. Databases
+4. Monitoring 
