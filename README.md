@@ -1,8 +1,9 @@
 # High-Level-Design
-My practice repo for all the HLD questions I did
+My practices for system-design interviews 
 
-There will be spelling mistakes, so just try to understand them by yourself.
-This is not a reference repo, not yet.
+If there is any scope of improvement please feel free to raise a issue.
+
+I'm also learning day by day, so please be easy on me.
 
 ## Questions 
 1. SMS system
