@@ -171,3 +171,7 @@ So, for that
 The read and write DBs are required to be separate, where there can be just 1:1 master-slave arch between both of those.
 
 3. Load balancers are reccomended on both the ends, since we have multiple input API servers, which can be statefull and so is on the transaction polling 3rd party LBs
+
+
+## Diagram 
+![Untitled-2022-07-05-1237](https://user-images.githubusercontent.com/25270515/186882595-78eb3835-ae95-4620-9cd0-d3f243b2a4b2.png)
