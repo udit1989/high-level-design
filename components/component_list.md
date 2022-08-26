@@ -8,7 +8,7 @@
 # Components
 
 1. Client - Server
-2. Protocol between client-server 
+2. [Protocols](https://github.com/sahilverma0696/High-Level-Design/blob/main/components/protocols.md)
 3. Database - SQL/NoSQL
 4. In-memory DB
 5. Zookeeper
