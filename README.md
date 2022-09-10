@@ -6,7 +6,7 @@ If there is any scope of improvement please feel free to raise a issue.
 I'm also learning day by day, so please be easy on me.
 
 ## Components 
-- Contains deep dive on individual components
+### Contains deep dive on individual components
 - [Components List](https://github.com/sahilverma0696/High-Level-Design/blob/main/components/component_list.md)
 - [Protocols](https://github.com/sahilverma0696/High-Level-Design/blob/main/components/protocols.md)
 
