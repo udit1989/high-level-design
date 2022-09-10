@@ -17,7 +17,7 @@ I'm also learning day by day, so please be easy on me.
 
 
 ## Questions
-- [mint.com](https://github.com/sahilverma0696/High-Level-Design/tree/main/questions/mint.com) 
+- [mint.com](https://github.com/sahilverma0696/high-level-design/blob/main/questions/mint.com/design.md) 
 - SMS system
 - URL shortening 
 - Auto complete: typeahead 
