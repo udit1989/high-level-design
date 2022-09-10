@@ -1,5 +1,5 @@
-# High-Level-Design
-My practices for system-design interviews 
+
+The repository contains high level system design components, questions and best practices.
 
 If there is any scope of improvement please feel free to raise a issue.
 
