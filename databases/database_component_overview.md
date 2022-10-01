@@ -35,7 +35,7 @@ The main development in this half contains the optimization of components of top
 ### Parser
 
 
-```C++
+```cpp
 
 AST* QueryEngine.parser(string query);
 ```
@@ -68,7 +68,7 @@ Now this AST still does not know how to get the data
 
 ### Planner
 
-```c++
+```cpp
 QueryPlan QueryEngine.Planner( AST);
 ```
 
@@ -82,7 +82,7 @@ A query_plan simply means making the query contextually relevant to the database
 
 in simple terms consider the example below
 
-```c++
+```cpp
 
 unordered_map<ASTNode,MemoryAddress> uMap;
 
@@ -105,7 +105,7 @@ This plan will be guarantee correct, but slow, at-least for moderate  complex qu
 
 ### Optimizer 
 
-```C++
+```cpp
 QueryPlan QueryEngine.Optimizer(QueryPlan);
 ```
 
