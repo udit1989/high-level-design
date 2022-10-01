@@ -120,4 +120,35 @@ Or possibly running sample query to understand value distribution before the mai
 
 For example, the optimizer will try to understand better operation between a ```merge join``` vs  ```hash_join```
 
-The optimizer does not necessarily gets it right all the time, that is why it is asked to write <b> optmised queries in SQL </b> 
+The optimizer does not necessarily gets it right all the time, that is why it is asked to <b> write optmized queries in SQL </b> 
+
+## Bottom Half
+
+The objective of this half is to efficiently read/write data & mutating the data present.
+
+These objectives can be taken as 
+    - Transactional property
+    - Recovery guarantee
+    - Storage efficiency 
+
+When we talk about the major NoSQL dBs, it only contains the bottom half.
+
+### Transactions 
+    
+    - Consistency: the guarantee of providing the same data for a transaction.
+
+Now it depends on the dB to what level they provide consistency.
+Most traditional dB provide serializable OR linearizable consistency.
+
+For example:
+A NoSQL provides a shard-level consistency.
+Where as BigTable provides row level consistency.
+
+## CONSISTENCY 
+
+![Untitled-2022-10-02-0016](https://user-images.githubusercontent.com/25270515/193431881-54414706-2973-4a5c-8ba6-d61870e6b9ce.png)
+
+
+
+NoSQL mostly provides Read committed consistency, which makes them harder to utilize in interactive applications.
+
