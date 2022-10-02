@@ -152,3 +152,67 @@ Where as BigTable provides row level consistency.
 
 NoSQL mostly provides Read committed consistency, which makes them harder to utilize in interactive applications.
 
+### ACID properties
+
+Atomicity
+
+    - In plot it stands for all in or nothing. 
+    - Either an action in whole will take place or it won't happen at all, if any of its dependency fails.
+
+Consistency
+
+    - Different from distributed system
+    - A transaction can only take the database from one state to another, all dependent mutations that might be triggered must be completed before the transaction can be fully committed.
+
+Isolation 
+
+    - Transactions can't affect each other while running.
+    - ELI5: A & B transactions takes place. So, it should look like A & B are executed sequentially, does not specify which one gets executed first.
+
+Durability 
+
+    - Written data will not be lost, even on system failure
+    - Inception of distributed systems
+
+### Logs
+
+Logs are the key component that gives <b> Durability </b> in ACID.
+Fundamentally a log is a write-ahead log. Means the result of a transaction is written in log before is is reflected or displayed in tables.
+This gives the recover facility, since the data can be recovered from the log.
+Also, allows to go back to a certain commit.
+So, log should have before and after data state of a transaction.
+
+### View OR the Storage
+
+This is the actual container to store the data that is present.
+One of the most common way to store the data is B+ tree.
+
+Major difference between B tree and B+ tree: all the values are present in the leaf level.
+
+<b>B+ Tree</b>
+Better for higher read rates than write rates.
+
+<b>LSM tree</b>
+
+Log structure merge tree
+
+Good for write heavy system, sequentialIO, and lower storage overhead.
+
+![Untitled-2022-10-02-2050](https://user-images.githubusercontent.com/25270515/193473620-b1ae5bc9-e65e-4c5c-afbd-1351b105dc5f.png)
+
+- In LSM tree all the writes are committed to an in-memory log.
+- Periodically that record is sorted by ```recordID```, and small lookup table is constructed. The table & sorted logs are committed to the disk.
+- As they build up, they are merged together to layer and layered commits.
+
+When <b>READ</b> is requested
+- Each log's lookup table is requested, to find the requested recorded.
+
+LSM provide significantly better write throughput as compared to B+ tree.
+
+But, this write-performance has a cost, i.e., write-amplification
+
+<b>Write-Amplification</b>
+
+For each log that is written, that would be re-written several number of times, as the data grows.
+
+For this, reads can still be improved by memoization, but not writes.
